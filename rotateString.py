@@ -1,8 +1,5 @@
 def solve(A,B):
-    
-    first = A[0 : len(A)-B] 
-    second = A[len(A)-B : ]
-    return second+first
+    return A[-1]
 
 A='nrsizekitrkpbkqxsmq'
 B=56
