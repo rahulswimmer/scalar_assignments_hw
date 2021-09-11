@@ -1,6 +1,11 @@
 def ispalindrome(A):
-    if len(A) < 2: return 1
-    if A[0] != A[-1]: return 0
-    return ispalindrome(A[1:-1])
+    if len(A) <= 1 :
+      return 1
+    if A[0] == A[len(A) - 1] :
+        return ispalindrome(A[1:len(A) - 1])
+    else :
+        return 0
 
-print(ispalindrome("lolo"))
+    
+
+print(ispalindrome("lolol"))
