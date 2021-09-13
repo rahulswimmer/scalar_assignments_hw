@@ -1,18 +1,22 @@
 def main():
-    arr = list(map(int, input().strip().split()[1:]))
+    # a = [list(map(int, input().strip().split()[1:]))]
+    # d = int(input())
 
+    a = []
+
+    d = int(input())
     n = int(input())
+    for _ in range(0, n):
+        ele = int(input())
+        a.append(ele)
 
-    for i in range(0, n):
-        l = arr[len(arr)-1]
+    output_list = []
 
-        for j in range(len(arr)-1, -1, -1):
-            arr[j] = arr[j-1]
+    for item in range(len(a) - d, len(a)):
+        output_list.append(a[item])
 
-        arr[0] = l
-    for i in range(0, len(arr)):
-        print(arr[i]),
+    for item in range(0, len(a) - d):
+        output_list.append(a[item])
 
 
-if __name__ == '__main__':
-    main()
+main()

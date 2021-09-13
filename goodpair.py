@@ -1,13 +1,22 @@
-def solve():
-    A = [1, 2, 3, 4]
-    B = 8
-    goodPairCount = 0
+def solve(A, B):
+    hashmap = {}
 
-    for i in range(len(A)):
-        for j in range(i+1, len(A)):
-            if i != j and (A[i]+A[j] == B):
-                goodPairCount += 1
-    return goodPairCount
+    for i in A:
+        if i in hashmap:
+            hashmap[i] += 1
+        else:
+            hashmap[i] = 1
+
+    for i in hashmap:
+        if B-i in hashmap:
+            if i*2 != B:
+                return 1
+            if i*2 == B and hashmap[i] > 1:
+                return 1
+    return 0
 
 
-print(solve())
+A = [1, 2, 2]
+C = len(A)
+B = 4
+print(solve(A, B))

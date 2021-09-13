@@ -1,14 +1,14 @@
-def solve():
-    inputArr = [1, 2, 2, 5, 6]
-    startIndex = 0
-    lastIndex = startIndex+1
-    subArrays = [[]]
+def solve(A):
+    hashmap = {}
 
-    for i in range(len(inputArr)+1):
-       for j in range(i):
-           subArrays.append(inputArr[j:i])
-    return subArrays
-        
+    for i in A:
+        if i in hashmap:
+            hashmap[i] += 1
+        else:
+            hashmap[i] = 1
+
+    return 1
 
 
-print(solve())
+A = [1, 2, 2, 5, 6]
+print(solve(A))
