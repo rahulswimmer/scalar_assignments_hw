@@ -1,3 +1,5 @@
+import math
+
 def solve(A):
     count=0
     isprime=0
@@ -8,10 +10,11 @@ def solve(A):
     return count
 
 def checkPrime(n):
+    max_div = math.floor(math.sqrt(n))
     if n <=1:
         return 0
     else:
-        for i in range(2,n):
+        for i in range(2,max_div+1):
             if n%i==0:
                 return 0
         else:
