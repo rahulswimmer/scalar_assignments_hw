@@ -1,21 +1,26 @@
-def solve(A,B,C):
-    hashmap={}
-    commonArr = []
-    for i in A:
-        if i in hashmap:
-            hashmap[i]+=1
-        else:
-            hashmap[i] =1
-
-    for i in range(len(B)):
-        if B[i] in hashmap:
-            commonArr.append(B[i])
-
-    for i in range(len(B))
-
-    return commonArr
-
-A=[1,1,2]
-B=[2,3]
-C=[3]
-print(solve(A,B,C))
+class Solution:
+    # @param A : list of integers
+    # @param B : list of integers
+    # @param C : list of integers
+    # @return a list of integers
+    def solve(self, A, B, C):
+        setB = set(B)
+        setC = set(C)
+        
+        arr = []
+        
+        for i in A:
+            if i in setB:
+                arr.append(i)
+            elif i in setC:
+                arr.append(i)
+        
+        for i in B:
+            if i in setC:
+                arr.append(i)
+        
+        return list(sorted(set(arr)))
+        
+        
+        
+        

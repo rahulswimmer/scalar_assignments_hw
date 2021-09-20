@@ -1,17 +1,19 @@
 def solve(A, B):
     col = len(arr)
     row = 2 * col - 1
-    print(row, col)
 
-    outputArr = [[0 for i in range(col)] for i in range(row)]
+    outputArr = []
 
-    # for i in range(row) :
-    #     outputArr.append([])
+    for i in range(row):
+        outputArr.append([])
 
-    # for i in range(col) :
-    #     for j in range(col) :
-    #         outputArr[i + j].append(B[i][j])
-    # return outputArr
+    for i in range(col):
+        for j in range(col):
+            outputArr[i + j].append(B[i][j])
+    for i in range(len(outputArr)):
+        for j in range(col-len(outputArr[i])):
+            outputArr[i].append(0)
+    return outputArr
 
 
 A = 3
