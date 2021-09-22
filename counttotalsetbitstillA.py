@@ -1,18 +1,26 @@
-def solve(A):
-    # sum = 0
-    # for i in range(A+1):
-    #     binFormat = bin(i)
-    #     for j in binFormat:
-    #         if j == '1':
-    #             sum += 1
-    # return sum
-    arr = []
-    arr.append(0)
-    for i in range(1, A+1):
-        arr[i] = arr[i/2]+i % 2
+class Solution:
+    # @param A : integer
+    # @return an integer
+    def solve(self, A):
+        if A == 0:
+            return 0
+        elif A == 1:
+            return 1
 
-    print(arr)
+        x = self.largestPowerof2inrange(A)
 
+        btill2x = x * (1 << (x-1))
 
-A = 1
-solve(A)
+        msb2xton = A - (1 << x) + 1
+
+        rest = A - (1 << x)
+
+        ans = btill2x + msb2xton + self.solve(rest)
+
+        return ans
+
+    def largestPowerof2inrange(self, n):
+        x = 0
+        while (1 << x <= n):
+            x += 1
+        return x-1
