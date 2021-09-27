@@ -1,5 +1,9 @@
-def solve(A):
+import sys
+
+def solve(A,B):
     hashmap={}
+    min1=0
+    min2=0
 
     for i in A:
         if i in hashmap:
@@ -7,8 +11,12 @@ def solve(A):
         else:
             hashmap[i]=1
 
-    for i in hashmap:
-        if
+    for i in range(B):
+        min1=min(hashmap.values())
+
+    print(min1)
+    
 
 A='abcabbccd'
 B=3
+solve(A,B)
