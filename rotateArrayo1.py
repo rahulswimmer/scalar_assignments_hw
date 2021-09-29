@@ -1,12 +1,17 @@
 def main():
-    A = input().split(" ")
+    #A = input().split(" ")
+    str1 = "scaler"
+  #  K = int(input())]
+    K = 2
+    A = []
+    for i in str1:
+        A.append(i)
 
-    K = int(input())
     n = A[0]
 
-    for i in range(1, n):
-        ele = int(input())
-        A.append(ele)
+    # for i in range(1, n):
+    #     ele = int(input())
+    #     A.append(ele)
 
     if K > len(A):
         K = K % len(A)
