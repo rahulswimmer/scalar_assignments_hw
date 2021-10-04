@@ -10,7 +10,7 @@ def solve(A):
     return count
 
 def checkPrime(n):
-    max_div = math.floor(math.sqrt(n))
+    max_div = math.floor(math.sqrt(abs(n)))
     if n <=1:
         return 0
     else:
@@ -20,5 +20,5 @@ def checkPrime(n):
         else:
             return 1
 
-A=[1,2,3,4,67]
+A=[-11, 7, 8, 9, 10, 11]
 print(solve(A))

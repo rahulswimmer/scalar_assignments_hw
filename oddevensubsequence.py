@@ -1,21 +1,23 @@
 def solve(A):
-    hashmap = {}
-    oparr=[]
-    for i in A:
-        if i in hashmap:
-            hashmap[i] += 1
+    outputArr=[]
+    outputArr.append(A[0])
+
+    isPreviousNumberEven=checkEven(outputArr[0])
+
+    for i in range(1,len(A)):
+        isPreviousNumberEven=checkEven(outputArr[len(outputArr)-1])
+        if checkEven(A[i]):
+            if not isPreviousNumberEven and A[i]!=outputArr[len(outputArr)-1]:
+                outputArr.append(A[i])
         else:
-            hashmap[i] = 1
+            if isPreviousNumberEven and A[i]!=outputArr[len(outputArr)-1]:
+                outputArr.append(A[i])
 
-    oparr.append(next(iter(hashmap)))
+    return len(outputArr)
 
-    for key,value in hashmap.items():
-        i
-    
+def checkEven(n):
+    if n%2==0: return True
+    else: return False
 
-
-    return oparr
-
-
-A = [1, 2, 2, 5, 6]
+A = [ 12, 10, 28, 37, 43, 40, 14, 12, 48 ]
 print(solve(A))
