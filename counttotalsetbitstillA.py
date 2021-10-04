@@ -17,7 +17,7 @@ class Solution:
 
         ans = btill2x + msb2xton + self.solve(rest)
 
-        return ans
+        return ans%1000000007
 
     def largestPowerof2inrange(self, n):
         x = 0

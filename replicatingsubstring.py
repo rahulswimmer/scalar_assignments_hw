@@ -1,6 +1,5 @@
 def solve(A,B):
-    for i in B:
-        print(i)
+    print(set(B))
 
 A=2
 B="baab"
