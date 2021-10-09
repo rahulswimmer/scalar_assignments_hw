@@ -2,21 +2,18 @@ import sys
 
 def solve(A,B):
     hashmap={}
-    min1=0
-    min2=0
+    outputArr=[]
 
-    for i in A:
-        if i in hashmap:
-            hashmap[i]+=1
-        else:
-            hashmap[i]=1
+    # for i in A:
+    #     if i in hashmap:
+    #         hashmap[i]+=1
+    #     else:
+    #         hashmap[i]=1
 
-    for i in range(B):
-        min1=min(hashmap.values())
+    for i in range(1,27):
+        outputArr.
 
-    print(min1)
-    
 
 A='abcabbccd'
 B=3
-solve(A,B)
+print(solve(A,B))
