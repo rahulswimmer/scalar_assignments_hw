@@ -12,6 +12,7 @@ def solve(A):
             latestMin=i
         elif A[i]==gmax:
             latestMax=i
+
         if A[i]==gmin and A[i]==gmax:
             ans=1
         else:
@@ -20,5 +21,5 @@ def solve(A):
 
     
 
-A=[4,4,4,4,4,4]
+A=[3,4,4,1,6,7,2,3,1]
 print(solve(A))

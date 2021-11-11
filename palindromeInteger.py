@@ -4,5 +4,5 @@ def solve(A):
     else:
         return False
 
-A='000'
+A='101'
 print(solve(A))
