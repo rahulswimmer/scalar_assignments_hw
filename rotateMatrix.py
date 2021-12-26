@@ -6,6 +6,8 @@ def solve(A):
             temp = A[i][j]
             A[i][j] = A[j][i]
             A[j][i] = temp
+
+    print(A)
  
     for i in range(N):
         for j in range(N//2):
