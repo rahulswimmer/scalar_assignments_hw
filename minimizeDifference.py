@@ -1,15 +1,41 @@
-import sys
-
-def solve(A,B):
-    mins=-sys.maxsize-1
-    A.sort()
-
-    for _ in range(B):
-        A[len(A)-1]-=1
-        A[0]+=1
-        mins = max(A[len(A)-1])-min(A[0])
-    return mins
-
-A = [2, 6, 3, 9, 8]
-B=3
-print(solve(A,B))
+class Solution:
+    # @param A : list of integers
+    # @param B : integer
+    # @return an integer
+    def solve(self,A,B):
+        #A.sort()
+        minNum = min(A)
+        maxNum = max(A)
+        
+        hm={}
+        for i in range(len(A)):
+            if A[i] in hm:
+                hm[A[i]]+=1
+            else:
+                hm[A[i]]=1
+                
+        while minNum < maxNum:
+            minf = hm[minNum]
+            maxf = hm[maxNum]
+            
+            if minf < maxf:
+                if B >= minf:
+                    B-=minf
+                    minNum+=1
+                    if minNum in hm:
+                        hm[minNum]+=minf
+                    else:
+                        hm[minNum]=minf
+                else:
+                    break
+            else:
+                if B >= maxf:
+                    B-=maxf
+                    maxNum-=1
+                    if maxNum in hm:
+                        hm[maxNum]+=maxf
+                    else:
+                        hm[maxNum]=maxf
+                else:
+                    break
+        return maxNum-minNum
