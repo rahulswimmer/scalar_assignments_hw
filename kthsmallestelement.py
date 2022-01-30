@@ -1,5 +1,5 @@
 def solve(A, B):
-    for i in range(len(A)):
+    for i in range(B):
         k = i
         for j in range(i+1, len(A)):
             if A[k] > A[j]:
